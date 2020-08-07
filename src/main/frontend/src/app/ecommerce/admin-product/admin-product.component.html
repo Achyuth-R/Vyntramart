@@ -1,0 +1,38 @@
+<mat-toolbar style = "margin-bottom: 5%;"color="primary">
+    <mat-toolbar-row>
+      <!--  <span>HOME</span> -->
+       <span><a mat-button href="/">HOME</a></span>
+       <span class="spacer"></span>
+       <!-- <a mat-button style = "background-color : 'accent'" routerLink="/register">Register</a> -->
+       <button mat-button style = "background-color : 'accent'" routerLink="/login">Login</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class = "container widthchg">
+      <mat-toolbar>
+         <span>Products</span>
+      </mat-toolbar>
+      <form [formGroup]="create" novalidate (ngSubmit)="onSubmit()" class="my-form">
+      <mat-card class="my-card">
+               <mat-card-content>
+                        <mat-form-field class="full-width">
+                           <mat-label>Product Name</mat-label>
+                           <input  matInput  placeholder="ProductName" formControlName="ProductName" name="ProductName"  required>
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                           <mat-label>Price</mat-label>
+                           <input  matInput  placeholder="Price" formControlName="price" name="price">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                           <mat-label>pictureUrl</mat-label>
+                           <input  matInput placeholder="pictureUrl" formControlName="pictureUrl" name="pictureUrl">
+                        </mat-form-field>
+         </mat-card-content>
+         <mat-card-actions>
+            <!-- <button mat-raised-button (click)="register()" color="primary">REGISTER</button> -->
+            <button mat-raised-button type="submit" color="primary">REGISTER </button>
+         </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+  
+   

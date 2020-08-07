@@ -1,0 +1,50 @@
+<mat-toolbar style = "margin-bottom: 5%;"color="primary">
+  <mat-toolbar-row>
+    <!--  <span>HOME</span> -->
+     <span><a mat-button href="/">HOME</a></span>
+     <span class="spacer"></span>
+     <!-- <a mat-button style = "background-color : 'accent'" routerLink="/register">Register</a> -->
+     <button mat-button style = "background-color : 'accent'" routerLink="/login">Login</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class = "container widthchg">
+    <mat-toolbar>
+       <span>Registration</span>
+    </mat-toolbar>
+    <form [formGroup]="register" novalidate (ngSubmit)="onSubmit()" class="my-form">
+    <mat-card class="my-card">
+             <mat-card-content>
+                  <mat-form-field class="full-width">
+                    <mat-label>Username</mat-label>
+                    <input  matInput  placeholder="Username" formControlName="UserName" name="uname"  required>
+                 </mat-form-field>
+                   <mat-form-field class="full-width">
+                         <mat-label>First Name</mat-label>
+                         <input  matInput  placeholder="First name" formControlName="FirstName" name="fname"  required>
+                      </mat-form-field>
+                      <mat-form-field class="full-width">
+                         <mat-label>Last Name</mat-label>
+                         <input  matInput  placeholder="Last Name" formControlName="LastName" name="lname"  required>
+                      </mat-form-field>
+                      <mat-form-field class="full-width">
+                         <mat-label>Address</mat-label>
+                         <input  matInput  placeholder="Address" formControlName="Address" name="address"  required>
+                      </mat-form-field>
+                      <mat-form-field class="full-width">
+                         <mat-label>Email</mat-label>
+                         <input  matInput  placeholder="Email" formControlName="email" name="email">
+                      </mat-form-field>
+                      <mat-form-field class="full-width">
+                         <mat-label>Password</mat-label>
+                         <input  matInput type="password" placeholder="Password" formControlName="Password" name="password">
+                      </mat-form-field>
+       </mat-card-content>
+       <mat-card-actions>
+          <!-- <button mat-raised-button (click)="register()" color="primary">REGISTER</button> -->
+          <button mat-raised-button type="submit" color="primary">REGISTER </button>
+       </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
+
+ 

@@ -1,0 +1,21 @@
+<mat-toolbar style = "margin-bottom: 5%;"color="primary">
+    <mat-toolbar-row>
+      <!--  <span>HOME</span> -->
+       <span><button mat-button routerLink="/login">LOG OUT</button></span>
+       <span class="spacer"></span>
+       <!-- <a mat-button style = "background-color : 'accent'" routerLink="/register">Register</a>
+       <a mat-button style = "background-color : 'accent'" routerLink="/login">Login</a> -->
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="row" style="margin-left: 5pt;">
+    <div class="col-md-9">
+        <app-products #productsC [hidden]="orderFinished"></app-products>
+    </div>
+    <div class="col-md-3">
+        <app-shopping-cart (onOrderFinished)=finishOrder($event) #shoppingCartC
+                           [hidden]="orderFinished"></app-shopping-cart>
+    </div>
+    <div class="col-md-6 offset-3">
+        <app-orders #ordersC [hidden]="!orderFinished"></app-orders>
+    </div>
+</div>

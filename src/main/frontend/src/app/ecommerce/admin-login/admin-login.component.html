@@ -1,0 +1,45 @@
+<mat-toolbar style = "margin-bottom: 5%;"color="primary">
+    <mat-toolbar-row>
+      <!--  <span>HOME</span> -->
+       <span><button mat-button href="/">HOME</button></span>
+       <span class="spacer"></span>
+       <button mat-button style = "background-color : 'accent'" routerLink="/login">User Login</button>
+       <!-- <button mat-button style = "background-color : 'accent'" routerLink="/admin">Admin</button> -->
+    </mat-toolbar-row>
+</mat-toolbar>
+<form [formGroup]="login" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card" style="box-shadow:none; margin-top: 10%;">
+    <div class="row">
+        <div class="col-sm-5"></div>
+
+        <div class="col-sm-4" style="margin-left: 5%;">
+            <mat-card-header>
+                <mat-card-title>Login</mat-card-title>
+            </mat-card-header>
+        </div>
+    </div>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <mat-form-field class="full-width">
+                        <mat-label>User Name</mat-label>
+                        <input matInput placeholder="User name" formControlName="UserName" required>
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input matInput type = "password" placeholder="Password" formControlName="Password" required>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="row">
+              <div class = "col-sm-5"></div>
+              <div class = "col-sm-1" style="margin-left: 5%;">
+                <button mat-raised-button color="primary" [disabled]="!login.valid" type="submit">Submit</button>
+              </div>
+            </div>
+          </mat-card-actions>
+    </mat-card>
+</form>
